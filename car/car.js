@@ -9,6 +9,10 @@
     drive(distance) {
         this.odometer += distance
     }
+    async driveAsync(distance) {
+        this.odometer += distance
+        return this.odometer
+    }
 }
 
 module.exports = Car

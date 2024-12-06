@@ -34,7 +34,8 @@ describe("foo function", () => {
         expect(foo()).toHaveLength(7)
     })
 })
-//Car Test:
+//Car Test: 
+//use only if you want to test one, you can also use skip a test.only or test.skip or test.todo
 describe("Car class", () => {
     let prius
     beforeEach(() => {
@@ -69,5 +70,13 @@ describe("Car class", () => {
         prius.drive(5)
         expect(prius.odometer).toBe(15)
     })
+    test("drive method returns the updated odometer", async () => {
+    let updatedOdometer = await prius.driveAsync(7)
+    expect(updatedOdometer).toBe(7)
+    updatedOdometer = await prius.driveAsync(5)
+    expect(updatedOdometer).toBe(12)
+    })
+    
 })
 
+//Integration test are going to be testing functions working together
