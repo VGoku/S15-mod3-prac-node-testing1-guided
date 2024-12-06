@@ -1,9 +1,9 @@
+const Car = require("./car")
+
 function foo () {
     return "the foo"
 }
-const describe = describe;//red lines gone...
-const test = test;
-const expect = expect;
+
 // Test away!
 describe("our first tests", () => {
     test("sanity", () =>{
@@ -35,3 +35,29 @@ describe("foo function", () => {
     })
 })
 //Car Test:
+describe("Car class", () => {
+    let prius
+    beforeEach(() => {
+        prius = new Car("toyota", "prius")
+    })
+    test("it is defined", () => {
+        expect(Car).toBeDefined()
+        expect(Car).toBeInstanceOf(Function)
+    })
+    test("has model and make", () => {
+        // const prius = new Car("toyota", "prius")
+        expect(prius).toHaveProperty("make", "toyota")
+        expect(prius).toHaveProperty("model", "prius")
+        expect(prius.make).toBeDefined()
+        expect(prius.model).toBeDefined()
+        expect(prius.make).toBe("toyota")
+        expect(prius.model).toBe("prius")
+        expect(prius).toMatchObject({ make: "toyota", model: "prius" })
+        // expect(prius).toEqual({ make: "toyota", model: "prius" })
+        })
+        test("new cars start with the odometer at zero", () => {
+            // const prius = new Car("toyota", "prius")
+            expect(prius).toHaveProperty("odometer", 0)
+    })
+})
+
