@@ -1,6 +1,9 @@
 function foo () {
     return "the foo"
 }
+const describe = describe;//red lines gone...
+const test = test;
+const expect = expect;
 // Test away!
 describe("our first tests", () => {
     test("sanity", () =>{
