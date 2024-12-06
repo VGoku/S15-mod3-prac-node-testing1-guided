@@ -15,3 +15,4 @@ npm i
 npx eslint --init
 npm i jest
 npx jest
+npm i -D @types/jest
