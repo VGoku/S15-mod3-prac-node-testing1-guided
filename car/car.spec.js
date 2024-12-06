@@ -59,5 +59,15 @@ describe("Car class", () => {
             // const prius = new Car("toyota", "prius")
             expect(prius).toHaveProperty("odometer", 0)
     })
+    test("cars have a drive method", () => {
+        expect(prius.drive).toBeDefined()
+        expect(prius.drive).toBe(Car.prototype.drive)
+    })
+    test("drive method take distance and increases odometer by that distance", () => {
+        prius.drive(10)
+        expect(prius.odometer).toBe(10)
+        prius.drive(5)
+        expect(prius.odometer).toBe(15)
+    })
 })
 
